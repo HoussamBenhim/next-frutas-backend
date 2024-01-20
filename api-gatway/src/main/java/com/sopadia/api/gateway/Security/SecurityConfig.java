@@ -2,6 +2,7 @@ package com.sopadia.api.gateway.Security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -22,8 +23,11 @@ public class SecurityConfig {
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity httpSecurity){
          return httpSecurity.csrf(csrfSpec -> csrfSpec.disable())
 
-                 .authorizeExchange(exchange->exchange.pathMatchers("/eureka/**").permitAll()
-                         .pathMatchers("/api/products/**").hasRole("dev")
+                 .authorizeExchange(exchange->exchange
+                         .pathMatchers(HttpMethod.GET).permitAll()
+
+                         .pathMatchers("/eureka/**","/api/products/**").permitAll()
+                        // .pathMatchers("/api/products/**").hasRole("dev")
                          .anyExchange().authenticated())
                  .oauth2ResourceServer(oauth-> oauth.jwt(jwtSpec -> jwtSpec.jwtAuthenticationConverter(jwtConverter))).build();
     }
