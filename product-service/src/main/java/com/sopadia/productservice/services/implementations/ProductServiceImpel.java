@@ -43,7 +43,7 @@ public class ProductServiceImpel implements ProductService {
 
     private static Product convertRequestProductToProductObject(RequestProduct reqProduct){
         return Product.builder().name(reqProduct.getName())
-                .eanCode(reqProduct.getEanCode())
+                .eanCode(reqProduct.getEancode())
                 .category(convertRequestCategoryToCategory(reqProduct.getCategory())).build();
     }
     private static Category convertRequestCategoryToCategory(RequestCategory requestCategory){

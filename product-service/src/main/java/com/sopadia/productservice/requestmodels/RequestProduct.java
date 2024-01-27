@@ -12,7 +12,7 @@ import java.math.BigInteger;
 @AllArgsConstructor
 public class RequestProduct {
     private String name;
-    private BigInteger eanCode;
+    private BigInteger eancode;
     private RequestCategory category;
 
 }

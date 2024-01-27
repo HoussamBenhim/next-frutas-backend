@@ -13,17 +13,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/products", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api/products")
 @RequiredArgsConstructor
 public class ProductController {
 
     private final ProductService productService;
-    @PostMapping
+    @CrossOrigin(origins = "http://localhost:3000")
+    @PostMapping( consumes = {"application/json"})
     @ResponseStatus(HttpStatus.CREATED)
-    public void createProduct(@RequestBody RequestProduct requestProduct){
+    public String createProduct(@RequestBody RequestProduct requestProduct){
         productService.addNewProduct(requestProduct);
+        return "Created Product";
     }
-    @GetMapping
+    @GetMapping("/all")
     public List<ResponseProduct> getAllProducts(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int pageSize){
         PageRequest of = PageRequest.of(page, pageSize,Sort.by("name").descending());
         return  productService.getAllProducts(of);
