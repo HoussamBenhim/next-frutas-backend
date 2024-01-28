@@ -15,8 +15,8 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @RequiredArgsConstructor
 @Configuration
-//@EnableWebSecurity(debug = true)
-@EnableWebSecurity
+@EnableWebSecurity(debug = true)
+//@EnableWebSecurity
 public class WebSecurityConfig {
     @Value("${security.oauth2.resourceserver.jwt.jwk-set-uri}")
     private String issuerUri;
