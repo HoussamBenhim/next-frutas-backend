@@ -32,7 +32,7 @@ public class ProductController {
         return "Created Product";
     }
     @GetMapping("/all")
-    public List<ProductDto> getAllProducts(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int pageSize){
+    public List<ProductDto> getAllProducts(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int pageSize){
         PageRequest of = PageRequest.of(page, pageSize,Sort.by(FILTER_NAME).descending());
         List<Product> productList=  productService.getAllProducts(of);
         List<ProductDto> productDtoList = productList.stream().map(product -> productMapper.toProductDto(product)).toList();

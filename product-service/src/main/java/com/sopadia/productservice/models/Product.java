@@ -24,7 +24,10 @@ public class Product {
     private Integer price;
     @Field(value = "unity")
     private PriceUnit  unite;
-
+    @Field(value = "origin")
+    private String origin;
+    @Field(value = "description")
+    private String  description;
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
