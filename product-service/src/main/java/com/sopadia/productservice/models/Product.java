@@ -27,6 +27,7 @@ public class Product {
 
     @Data
     @AllArgsConstructor
+    @NoArgsConstructor
     public static class Category {
         @Field(value = "category_name")
         private String categoryName;
@@ -36,15 +37,15 @@ public class Product {
 
     public static enum PriceUnit{
         KG,
-        Gramme,
+        GRAMME,
         SAC,
-        Barquette,
-        Botte,
-        Piece,
-        Carton,
-        Cagette,
-        Caisse,
-        Plateau
+        BARQUETTE,
+        BOTTE,
+        PIECE,
+        CARTON,
+        CAGETTE,
+        CAISSE,
+        PLATEAU
 
     }
 }

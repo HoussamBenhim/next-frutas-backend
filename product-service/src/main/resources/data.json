@@ -1,0 +1,10 @@
+[{
+  "productName":"pommes pinklady",
+  "category":{
+    "categoryName":"fruits",
+    "family":"pommes"
+  },
+  "price":13,
+  "unite":"CAISSE"
+}
+]

@@ -31,6 +31,7 @@ public abstract class ProductMapper {
 
     @Mapping(source = "category", target="category", qualifiedByName = "mapCategoryDto")
     @Mapping( target="priceUnit", expression = "java(mapEnumToString(product.getUnite()))")
+    @Mapping(source = "id", target = "id")
     public abstract  ProductDto toProductDto(Product product);
 
     public String mapEnumToString(Product.PriceUnit unite){

@@ -9,6 +9,7 @@ import lombok.Data;
 @Builder
 @AllArgsConstructor
 public class ProductDto {
+    private String id;
     private String productName;
     private CategoryDto category;
     private Integer price;
