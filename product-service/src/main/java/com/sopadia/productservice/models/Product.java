@@ -21,7 +21,7 @@ public class Product {
     @Field(value = "category")
     private Category category;
     @Field(value = "price")
-    private Integer price;
+    private double price;
     @Field(value = "unity")
     private PriceUnit  unite;
     @Field(value = "origin")

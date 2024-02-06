@@ -12,9 +12,10 @@ public class ProductDto {
     private String id;
     private String productName;
     private CategoryDto category;
-    private Integer price;
+    private double price;
     private String priceUnit;
-
+    private String origin;
+    private String description;
     @Data
     @AllArgsConstructor
     public static class CategoryDto {
